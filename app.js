@@ -5,4 +5,8 @@ document.querySelectorAll('.add-btn').forEach(b=>b.addEventListener('click',()=>
 document.querySelector('.cart-btn').onclick=()=>{drawer.classList.add('open');overlay.classList.add('show')};
 function close(){drawer.classList.remove('open');overlay.classList.remove('show')} document.querySelector('#closeCart').onclick=close;overlay.onclick=close;
 document.querySelectorAll('.filter').forEach(btn=>btn.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));btn.classList.add('active');const f=btn.dataset.filter;document.querySelectorAll('.product-card').forEach(c=>c.style.display=(f==='all'||c.dataset.category===f)?'block':'none')});
-document.querySelector('.menu-btn').onclick=()=>document.querySelector('#products').scrollIntoView({behavior:'smooth'});
+document.querySelector('.menu-btn').onclick=()=>{
+  const target=document.querySelector('#products');
+  if (target) target.scrollIntoView({behavior:'smooth'});
+  else window.location.href='products.html';
+};
