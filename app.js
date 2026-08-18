@@ -10,3 +10,15 @@ document.querySelector('.menu-btn').onclick=()=>{
   if (target) target.scrollIntoView({behavior:'smooth'});
   else window.location.href='products.html';
 };
+
+document.querySelectorAll('.product-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.product-tab').forEach(t => t.classList.remove('is-active'));
+    tab.classList.add('is-active');
+    const targetId = tab.dataset.target;
+    const target = document.getElementById(targetId);
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
