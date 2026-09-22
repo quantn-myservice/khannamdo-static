@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&family=Inter:wght@400;500;600;700;800&display=swap');
+
 :root {
   --ink: #152218;
   --green: #c49319;
@@ -11,7 +13,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-body { margin: 0; font-family: 'Segoe UI', Tahoma, Arial, sans-serif; color: var(--ink); background: var(--paper); }
+body { margin: 0; font-family: 'Inter', 'Segoe UI', Tahoma, Arial, sans-serif; color: var(--ink); background: var(--paper); }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; }
 .container { width: min(1180px, calc(100% - 40px)); margin: auto; }
@@ -31,8 +33,8 @@ button { font: inherit; }
 .hero { background: var(--cream); overflow: hidden; }
 .hero-grid { min-height: 680px; display: grid; grid-template-columns: 1.05fr .95fr; align-items: center; gap: 70px; }
 .kicker, .eyebrow { font-size: 12px; letter-spacing: .16em; font-weight: 800; color: var(--green); }
-h1 { font-family: 'Trebuchet MS', 'Segoe UI', Tahoma, Arial, sans-serif; font-size: clamp(54px, 7vw, 92px); line-height: .93; margin: 20px 0 26px; letter-spacing: -.05em; font-weight: 800; text-wrap: balance; }
-h1 em { color: var(--green); font-weight: 700; font-style: normal; }
+h1 { font-family: 'Prata', Georgia, 'Times New Roman', serif; font-size: 58px; line-height: 1.12; margin: 20px 0 26px; letter-spacing: -.04em; font-weight: 400; text-wrap: balance; }
+.gold-line { color: #c89c1e; }
 .lead { font-size: 18px; line-height: 1.7; color: #526057; max-width: 650px; }
 .hero-actions { display: flex; gap: 12px; margin: 34px 0; }
 .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border-radius: 4px; font-weight: 700; }
