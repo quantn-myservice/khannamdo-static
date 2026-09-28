@@ -138,12 +138,26 @@ h1 { font-family: 'Prata', Georgia, 'Times New Roman', serif; font-size: 58px; l
 .contact-icon { display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: rgba(255,255,255,.18); font-weight: 800; font-size: 24px; line-height: 1; }
 .contact-label { font-size: 15px; font-weight: 700; letter-spacing: .02em; }
 .floating-social { position: fixed; right: 16px; bottom: 86px; display: flex; flex-direction: column; align-items: center; gap: 12px; z-index: 40; }
+.floating-social-links { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.floating-social-links[hidden] { display: none; }
+.floating-social-links:not([hidden]) .social-link { animation: social-pop-out .18s ease-out both; }
+.floating-social-links:not([hidden]) .social-link:nth-child(1) { --social-origin-y: 204px; animation-delay: .09s; }
+.floating-social-links:not([hidden]) .social-link:nth-child(2) { --social-origin-y: 136px; animation-delay: .045s; }
+.floating-social-links:not([hidden]) .social-link:nth-child(3) { --social-origin-y: 68px; animation-delay: 0s; }
+.floating-social-links.is-closing .social-link { animation: social-pop-in .18s ease-in both; }
+.floating-social-links.is-closing .social-link:nth-child(1) { animation-delay: 0s; }
+.floating-social-links.is-closing .social-link:nth-child(2) { animation-delay: .045s; }
+.floating-social-links.is-closing .social-link:nth-child(3) { animation-delay: .09s; }
+@keyframes social-pop-out { from { opacity: 0; transform: translateY(var(--social-origin-y)) scale(.35); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@keyframes social-pop-in { from { opacity: 1; transform: translateY(0) scale(1); } to { opacity: 0; transform: translateY(var(--social-origin-y)) scale(.35); } }
+@media (prefers-reduced-motion: reduce) { .floating-social-links:not([hidden]) .social-link { animation: none; } }
 .social-link { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border-radius: 50%; color: #fff; text-decoration: none; font-weight: 800; box-shadow: 0 10px 18px rgba(0,0,0,.18); }
 .social-phone { background: #55d320; font-size: 18px; }
 .social-phone span { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; font-size: 18px; }
 .social-zalo { background: #1c8af0; font-size: 26px; }
 .social-zalo span { font-size: 13px; font-weight: 500; }
 .social-facebook { background: #1f5fcf; font-size: 28px; }
+.social-toggle { display: inline-flex; align-items: center; justify-content: center; width: 56px; height: 56px; border: 0; border-radius: 50%; background: #3264c7; color: #fff; font-size: 34px; line-height: 1; box-shadow: 0 10px 18px rgba(0,0,0,.18); cursor: pointer; }
 footer { background: #101913; color: #dce3de; padding: 60px 0 20px; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 50px; }
 .footer-brand { color: #fff; }
